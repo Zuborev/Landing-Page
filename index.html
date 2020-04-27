@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Доставка сыра по Харькову</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<header>
+		<div id="logo" onclick="slowScroll('#top')">
+			<span>Mr.Cheese</span>			
+		</div>
+		<div id="about">
+			<a href="#" title="Наше предложение" onclick="slowScroll('#main')">Наше предложение</a>
+			<a href="#" title="Преимущества" onclick="slowScroll('#overview')">Преимущества</a>
+			<a href="#" title="Контакты" onclick="slowScroll('#contacts')">Контакты</a>
+			<a href="#" title="FAQ" onclick="slowScroll('#faq')">FAQ</a>
+		</div>
+	</header>
+
+	<div id="top">
+		<h1>Продукты</h1>
+		<h3>с душой из деревни!</h3>
+	</div>
+
+	<div id="main">
+		<div сlass="intro">
+			<h2>Наши сыры сведут вас с ума!</h2>
+			<span>Большой выбор сыров и других молочных продуктов. <h4> Пишите нам - (098) 67-067-99 </h4> </span>
+		</div>
+		<div сlass="text">
+			<span>Мы надеемся, что вы станете не просто нашими клиентами, а настоящими друзьями. И мы будем очень рады, если наша продукция станет основной на вашем столе. Со своей стороны мы сделаем для этого все возможное.</span>
+		</div>
+	</div>
+
+	<div id="overview">
+		<h2>Преимущества</h2>
+		<h4>с нами вкуснее</h4>
+
+		<div class="img">
+			<img src="images/cheese.jpg" alt="сыры">
+			<span>Домашние сыры без добавок</span>			
+		</div>
+		
+		<div class="img">
+			<img src="images/milk.jpg" alt="молоко, творог">
+			<span>Парное молоко и вкуснейший творог</span>			
+		</div>
+
+		<div class="img">
+			<img src="images/rabbit.jpg" alt="кролик">
+			<span>Один из самых полезных видов мяса</span>			
+		</div>
+
+		<div class="img">
+			<img src="images/yayca.jpg" alt="домашнее яйцо">
+			<span>Всегда свежее яйцо</span>			
+		</div>
+
+	</div>
+
+	<div id="contacts">
+		<center><h5>Обратная связь</h5></center>
+		<form id="form_input">
+
+			<label for="name">Имя <span>*</span></label><br>
+			<input type="text" placeholder="Введите имя" name="name" id="name"><br>
+			<label for="phone">Ваш телефон <span>*</span></label></label><br>
+			<input type="phone" placeholder="Введите номер телефона" name="phone" id="phone"><br>
+			<label for="email">Ваша почта <span>*</span></label></label><br>
+			<input type="email" placeholder="Введите вашу почту" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+			<div id="messageShow"</div>
+		</form>
+				
+
+	</div>
+	
+	<div id="faq">
+		<div>
+			<span class="title">Оплата</span><br>
+			<span class="heading">Как оплатить?</span>
+			<p>Оплата производится любым удобным для Вас способом.</p>
+			<span class="heading">Наличный расчет</span>
+			<p>Оплата производится при личной встрече.</p>
+			<span class="heading">Безналичный расчет</span>
+			<p>Оплата производится на карту ПриватБанк.</p>
+		</div>
+		<div>
+			<span class="title">Доставка</span><br>
+			<span class="heading">Как осуществляется доставка?</span>
+			<p>Доставка производится до м. Индустриальная или самовывоз.</p>
+			<span class="heading">Как часто?</span>
+			<p>Доставка осуществляется раз в неделю, исключение - домашние сыры (по договоренности).</p>
+			<span class="heading">Можно заказать адресную доставку?</span>
+			<p>Конечно можно. Оплачивается отдельно - по договоренности (от 75 грн.)</p>
+		</div>
+		<div>
+			<span class="title">Информация</span><br>
+			<span class="heading">Вы используете пастеризованное молоко?</span>
+			<p>Пастеризация является неотъемлемой и обязательной частью технологического процесса.</p>
+			<span class="heading">Откуда продукты?</span>
+			<p>Все продукты привозятся из собственной деревни: около 100 км от Харькова, при выращивании животных используются исключительно натуральные продукты</p>
+			<span class="heading">Как с вами можно оперативно связаться?</span>
+			<p>Любым удобным для вас способом: позвоните нам, напишите в Viber или Instagram, оставьте заявку через форму обратной связи.</p>
+		</div>
+		
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		function slowScroll(id) {
+			$('html, body').animate({
+				scrollTop: $(id).offset().top
+			}, 500);
+		}
+
+		$(document).on("scroll", function () {
+			if($(window).scrollTop() === 0)
+				$("header").removeClass("fixed");
+			else
+				$("header").attr("class", "fixed");
+		});
+	</script>
+
+<script> 
+	$(document).ready (function () { 
+		$("#mess_send").click (function () { 
+ 		$('#messageShow').hide (); 
+ 		var name = $("#name").val (); 
+ 		var phone = $("#phone").val ();
+ 		var email = $("#email").val (); 
+ 		var message = $("#message").val (); 
+ 		var fail = ""; 
+ 		if (name.length < 3) fail = "Имя не меньше 3 символов";
+ 		else if (phone.split ('+380').length - 1 == 0) fail = "Начните с +380"; 
+ 		else if (email.split ('@').length - 1 == 0 || email.split ('.').length - 1 == 0) fail = "Вы ввели некорректный адрес эл. почты";
+ 		else if (message.length < 25) fail = "Слишком маленькое сообщение"; 
+ 		if (fail != "") { 
+ 			$('#messageShow').html (fail + "<div class='clear'><br></div>"); 
+ 			$('#messageShow').show (); 
+ 			return false; 
+ 		} 
+ 		$.ajax ({ 
+ 			url: 'ajax/feedback.php', 
+ 			type: 'POST', 
+ 			cache: false, 
+ 			data: {'name': name, 'phone': phone, 'email': email, 'message': message}, 
+ 			dataType: 'html', 
+ 			success: function (data) { 
+ 				$('#messageShow').html (data + "<div class='clear'><br></div>"); 
+ 				$('#messageShow').show (); 
+ 			} 
+ 		}); 
+ 	}); 
+ }); 
+</script>﻿
+ 
+
+	
+	<!--  <script>
+   $(document).ready (function () {
+    $("#mess_send").click (function () {
+     $('#messageShow').hide ();
+     var name = $("#name").val ();
+     var phone = $("#phone").val ();
+     var email = $("#email").val ();
+     var message = $("#message").val ();
+     var fail = "";
+     if (name.length < 2) fail = "Имя не меньше 2 символов";
+     else if (phone.split ('+380').length - 1 == 0)
+      fail = "Начните с +380";
+     else if (message.length < 10)
+      fail = "Слишком маленькое сообщение";
+     if (fail != "") {
+      $('#messageShow').html (fail + "<div class='clear'><br></div>");
+      $('#messageShow').show ();
+      return false;
+     }
+     $.ajax ({
+      url: 'ajax/feedback.php',
+      type: 'POST',
+      cache: false,
+      data: {'name': name, 'phone': phone, 'message': message},
+      dataType: 'html',
+      success: function (data) {
+       $('#messageShow').html (data + "<div class='clear'><br></div>");
+       $('#messageShow').show ();
+      }
+     });
+    });
+   });
+  </script>﻿ -->
+
+</body>
+</html>
